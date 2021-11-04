@@ -8,22 +8,35 @@ int main()
     cin >> t;
     for (int i = 0; i < t; i++)
     {
-        int p, n = 0, j = 0,a;
+        int p, count = 0, a = 1;
         cin >> p;
-
-        while (n < p)
+        while (a < p)
         {
-            a= pow(2, i);
-            n+=a;
+            a = a * 2;
         }
-        if (n == a)
+        if (a > 2048)
         {
-            cout << "1" << endl;
+            a = 2048;
         }
         else
         {
-            cout << i << endl;
+            if (a != p)
+            {
+                a /= 2;
+            }
         }
+
+        while (p > 0)
+        {
+            if (p >= a)
+            {
+                p -= a;
+                count++;
+            }
+
+            a /= 2;
+        }
+        cout << count << endl;
     }
 
     return 0;
