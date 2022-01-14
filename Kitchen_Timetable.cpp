@@ -22,7 +22,7 @@ int main()
             c[i] = a[i] - a[i - 1];
         for (int i = 0; i < n; i++)
         {
-            if (c[i]>=b[i])
+            if (c[i] >= b[i])
                 count++;
         }
         cout << count << endl;
